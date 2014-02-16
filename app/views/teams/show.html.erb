@@ -1,0 +1,18 @@
+<div id="main">
+  <h1><%= @team.name %> Leaderboard</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>This Week's Points</th>
+      <th>Last Week's Points</th>
+    </tr>
+		<% @leaders.each do |user| %>
+		<tr>
+			<th><%= user.first_name %> <%= user.last_name %></th>
+			<th><%= user.current_points(@team) %></th>
+			<th><%= user.last_week_points(@team) %></th>
+		</tr>
+		<% end %>
+  </table>
+</div>
